@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
   res.send('Hello')
 })
 
-app.use('/todo', [check('userName', 'Cant be empty').notEmpty(), check('userEmail', 'Cant be empty or incorrect email').notEmpty(), check('content', 'Cant be empty').notEmpty()], require('./src/controller/todo.controller'))
+app.use('/todo', [check('userName', 'Cant be empty').notEmpty(), check('userEmail', 'Cant be empty').notEmpty(), check('content', 'Cant be empty').notEmpty()], require('./src/controller/todo.controller'))
 app.use('/auth', require('./src/controller/login.controller'))
 
 Connection.connectToMongo()
