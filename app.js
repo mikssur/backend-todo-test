@@ -23,7 +23,7 @@ app.use(bodyParser.raw())
 app.use(cors())
 
 app.get('/', (req, res) => {
-  res.send('')
+  res.send('Hello')
 })
 
 app.use('/todo', [check('userName', 'Cant be empty').notEmpty(), check('userEmail', 'Cant be empty or incorrect email').notEmpty(), check('content', 'Cant be empty').notEmpty()], require('./src/controller/todo.controller'))
